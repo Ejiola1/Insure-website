@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --page-text-clr: #4f4f4f;
+    --page-header-clr:#333333;
+
+    --page-fw-700: 700;
+    --page-fw-400: 400;
+    
+    --page-fs-header: 3rem;
+    --page-fs-body:1.125rem;
+    --page-fs-btn: 1rem;
+
+    --page-line-height-header: 71.09px;
+    --page-line-height-body: 26.66px;
+    --page-line-height-head:25.18px;
+
+
+    --page-ff-head: 'Inconsolata', monospace;
+    --page-ff-body: 'Space Mono', monospace;
+
+}
+
+@media (min-width: 900px){
+    :root{
+        --page-fs-header: 4rem;
+        --page-fs-body:1.5rem;
+
+       --page-line-height-header: 94.78px;
+       --page-line-height-body: 35.54px;
+    }
+}
+
+.page-text-clr{color:var(--page-text-clr);}
+.page-header-clr{color:var(--page-header-clr);}
+.page-fw-700{font-weight: var(--page-fw-700);}
+.page-fw-400{font-weight: var(--page-fw-400);}
+.page-fs-header{font-size: var(--page-fs-header);}
+.page-fs-body{font-size: var(--page-fs-body);}
+.page-fs-btn{font-size: var(--page-fs-btn);}
+.page-ff-head{font-family: var(--page-ff-head);}
+.page-ff-body{font-family: var(--page-ff-body);}
+.page-line-height-header{line-height: var(--page-line-height-header);}
+.page-line-height-body{line-height: var(--page-line-height-body);}
+.page-line-height-head{line-height: var(--page-line-height-head);}
+.uppercase{text-transform: uppercase;}
+
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2, 
+h3{
+    margin: 0;
+}
+
+.wrapper{
+    width: min(90%, 1100px);
+    margin: 0 auto;
+    padding-inline: 1em;
+}
+
+body{
+font-family: var(--page-ff-body);
+font-weight: var(--page-fw-400);
+font-size: var(--page-fs-body);
+line-height: var(--page-line-height-body);
+color: var(--page-text-clr);
+min-height: 100vh;
+min-height: 100dvh;
+}
+
+body{
+    margin: 0;
+}
+
+.page-grid{
+    display: grid;
+}
+
+@media (min-width:600px){
+    .page-grid{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        column-gap:2em;
+        place-items: center;
+    }
+}
+
+.page-content-img{
+    margin: 1.5em auto;
+}
+
+.page-content{
+    margin-block: 3.5em;
+
+}
+
+.page-btn{
+    text-decoration: none;
+    background-color: var(--page-header-clr);
+    padding: 1em 1.5em;
+    display: inline-block;
+    margin-block: 1.5em;
+    color: #fff;
+}
