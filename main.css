@@ -292,41 +292,67 @@ body{
 .main{
     background-color: var(--clr-Dark-Violet);
     min-height: 30rem;
-    display: grid;    
 }
 
 .container-grid{
     display: grid;
     align-items: center;
     justify-content: center;
-    position: relative;  
 }
 
 .container-grid > *:last-child {
     text-align: center;
     padding: 1.5em;
-    position: relative;   
+    position: relative;
+    
 }
 
 .image-intro{width: 100vw;}
 
-.bg-image-intro{
+/*the intro image styling*/ 
+.container-grid > *:last-child::after{
+    content: url(/images/bg-pattern-intro-right-mobile.svg);
     position: absolute;
+    right: 0em;
 }
 
-.flow-right{inset: 12.5rem 0rem 0rem auto;}
-.flow-left{inset: 0;}
+.container-grid > *:last-child::before{
+content: url(/images/bg-pattern-intro-left-mobile.svg);
+position: absolute;
+top: 0;
+left: 0;
+}
 
 @media(min-width: 600px){
-    .flow-right{
-        display: none;
-    }
-
-    .flow-left{
-        transform: translate(-3.5em, 17em);
-    }
-  
+/*the intro image styling*/    
+.container-grid > *:last-child::after,
+.container-grid > *:last-child::before{
+  display: none;
 }
+
+.main{
+    position: relative;
+}
+
+.main::before{
+    content: url(/images/bg-pattern-intro-right-desktop.svg);
+    position: absolute;
+    right: 0;
+    top: -6em;
+    z-index: 100;
+}
+
+.main::after{
+    content: url(/images/bg-pattern-intro-left-desktop.svg);
+    position: absolute;
+    left: 0em;
+    bottom: -16em;
+
+}
+
+}
+
+
 
 .btn{
     text-decoration: none;
@@ -471,7 +497,7 @@ margin-block: 1.5em;
         background-image: url(/images/bg-pattern-footer-desktop.svg);
         background-repeat: no-repeat;
         background-position: left top;
-        background-size: contain;
+        
     }
 }
 
@@ -568,14 +594,14 @@ margin-block: 1.5em;
         position: relative;
     }
 
-    .container-grid > *:last-child::before{
-        content: " ";
-        display: block;
-        background-color: var(--clr-Dark-Grayish-Violet);
-        width: 40%;
-        height: 1px;
-        margin-block:1.5em;  
-    }
+  .container-grid > div > h1::before{
+    content: " ";
+    display: block;
+    background-color: var(--clr-Dark-Grayish-Violet);
+    width: 40%;
+    height: 1px;
+    margin-block:1em;  
+  }
 
     .d-grid__aside{
         display: grid;
